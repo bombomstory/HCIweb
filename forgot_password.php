@@ -7,10 +7,10 @@ if(!empty($_POST)){
   $email = $_POST["email"];
 
   // เชื่อมต่อฐานข้อมูล MySQL
-  require_once("config.php");
+  include("config.php");
 
   // เรียกใช้ฟังก์ช้่นที่เขียนขึ้นมาเอง
-  require_once("lib.php");
+  include("lib.php");
 
   // ตรวจสอบอีเมลล์ในฐานข้อมูลว่าตรงกันกับที่กรอกหรือไม่
 
