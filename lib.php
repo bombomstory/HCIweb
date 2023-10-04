@@ -29,7 +29,7 @@ function sendOTP($email){
     $mailSub = $subject;
     $mailMsg = $message;
      
-    include("/HCIweb/PHPMailer/PHPMailerAutoload.php");
+    require 'vendor/autoload.php';
 
     $mail = new PHPMailer();
     $mail->IsSmtp();
@@ -41,12 +41,12 @@ function sendOTP($email){
     $mail->CharSet="utf-8";
     $mail->ContentType="text/html";
     $mail->Username = "ksumooc2022@gmail.com"; //username gmail accound
-    $mail->Password = "moocP@ssw0rd"; //password gmail accound
+    $mail->Password = "ksumoocP@ssw0rd"; //password gmail accound
     $mail->SetFrom("no-reply@hciweb.com", "เว็บไซต์ HCI");
     // $mail->AddReplyTo("no-reply@hciweb.com", "เว็บไซต์ HCI");
     $mail->Subject = $mailSub;
     $mail ->Body = $mailMsg;
-    $mail ->AddAddress($mailto);
+    $mail ->AddAddress($mailto);k
      
     if(!$mail->Send()){
       echo "ไม่สามารถส่งอีเมลล์ได้";
